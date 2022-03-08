@@ -4,4 +4,4 @@
 Console.WriteLine("Введите трёхзначное число ->");
 string inputN = Console.ReadLine();
 int N =int.Parse(inputN);
-Console.WriteLine($"Вторая цифра числа {N/100%10}");
+Console.WriteLine($"Вторая цифра числа { N%100/10}");
