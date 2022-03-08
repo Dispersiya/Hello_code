@@ -2,7 +2,8 @@
 //и удаляет вторую цифру этого числа.
 
 
-Console.WriteLine("Введите трёхзначное число ->");
-string inputN = Console.ReadLine();
-int N =int.Parse(inputN);
-Console.WriteLine($"Вторая цифра числа {N/100%10}");
+Random rnd = new Random();
+int value = rnd.Next(100,999);
+int number = value/100*10+(value%10);
+Console.WriteLine(value);
+Console.WriteLine(number);
