@@ -2,7 +2,7 @@
 // 3 -> 1, 4, 9.
 // 5 -> 1, 8, 27, 64, 125
 
-int Promt (string message)
+int Prompt(string message)
 {
     Console.WriteLine(message);
     string strInput = Console.ReadLine();
@@ -10,7 +10,7 @@ int Promt (string message)
     return answer;
 }
 
-int N = Promt("Введите число =>");
+int N = Prompt("Введите число =>");
 
 int A = 1;
 Console.Write( A + " ");
