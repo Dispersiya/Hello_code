@@ -1,46 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
- static void Main(string[] args)
-        {
-            Console.Write("Enter something for to check that is it palindrome :");
-            string text = Console.ReadLine();
-            int len = text.Length;
-            bool flag = true;
- 
-            //check palindrome
-            for (int i = 0; i < len/2; i++)
-            {
-                if (text[i] != text[len - (i + 1)])
-                {
-                    flag = false;
-                    break;
-                }
-            }
- 
-            //if flag true, text is palindrome
-            if (flag)
-            {
-                Console.WriteLine("{0} is palindrome", text);
-            }
-            else
-            {
-                Console.WriteLine("{0} is not palindrome", text);
-            }
-            Console.ReadLine();
-        }
-static bool IsPalindrom(string word, bool ignoreCase = true)
-{
-    if (ignoreCase)
-    {
-        word = word.ToLowerInvariant();
-    }
+﻿// Задача 1: Напишите программу, которая принимает на вход пятизначное число и проверяет,
+// является ли оно палиндромом.
 
-    for (int first = 0, last = word.Length - 1; first < last; ++first, --last)
-    {
-        if (word[first] != word[last])
-        {
-            return false;
-        }
-    }
+/*Console.WriteLine("Введите число");
+string n = Console.ReadLine();
+int len= n.Length;
+if ((n[0]== n[4]) && (n[1]== n[3])) Console.WriteLine("palindrom");
+else Console.WriteLine("no palindrom");*/
+Console.WriteLine("Введите число");
+string inputN = Console.ReadLine();
+int N = int.Parse(inputN);
 
-    return true;
-}
+int N = (N / 10000 % 10 + N / 10000 % 10 + N / 1000 % 10));
+if ((n[0]== n[4]) && (n[1]== n[3])) Console.WriteLine("palindrom");
+else Console.WriteLine("no palindrom");
