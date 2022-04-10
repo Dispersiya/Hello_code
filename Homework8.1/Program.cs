@@ -1,31 +1,52 @@
 ﻿//Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию 
 //элементы каждой строки двумерного массива.
 
-var matrix = new int[9, 5];
-var rnd = new Random(); 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+void FillArray(int[,] matr)
+{
+    for (int m = 0; m < matr.GetLength(0); m++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int n = 0; n < matr.GetLength(1); n++)
         {
-            matrix[i, j] = rnd.Next(12, 45);
-            Console.Write(matrix[i, j] + " ");
+            matr[m, n] = new Random().Next(1, 10);
         }
-     Console.WriteLine();
     }
-        
- Console.WriteLine();
- var arr = matrix.Cast<int>().OrderByDescending(a => a).ToArray();
- int c =0;
- {
-   for (int j = 0; j < matrix.GetLength(0); j++)
-   {
-        for (int k = 0; k < matrix.GetLength(1); k++)
+}
+
+void PrintArray(int[,] matr)
+{
+    for (int m = 0; m < matr.GetLength(0); m++)
+    {
+        for (int n = 0; n < matr.GetLength(1); n++)
         {
-        matrix[j, k] = arr[c];
-        Console.Write(matrix[j, k] + " ");
-        c++;
+            Console.Write($"{matr[m, n]} ");
         }
         Console.WriteLine();
+    }
+}
+
+void Ordering(int[,] matr)
+{
+    for (int m = 0; m < matr.GetLength(0); m++)
+    {
+        for (int n = 0; n < matr.GetLength(1); n++)
+        {
+            for (int k = 0; k < matr.GetLength(1) - n - 1; k++)
+            {
+                if (matr[m, k] < matr[m, k + 1])
+                {
+                    int t = matr[m, k];
+                    matr[m, k] = matr[m, k + 1];
+                    matr[m, k + 1] = t;
+                }
+            }
         }
- }
+    }
+}
+
+int[,] matrix = new int[5, 5];
+FillArray(matrix);
+PrintArray(matrix);
+Console.WriteLine();
+Ordering(matrix);
+PrintArray(matrix);
  
